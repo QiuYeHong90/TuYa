@@ -51,6 +51,7 @@
 		A11F3D7E26929E5300475A3B /* TuYaDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TuYaDemoUITests.swift; sourceTree = "<group>"; };
 		A11F3D8026929E5300475A3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A11F3D8C26929E8800475A3B /* SHGraffitiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHGraffitiView.swift; sourceTree = "<group>"; };
+		A11F3D8E2692D9E800475A3B /* TuYaDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TuYaDemo.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +102,7 @@
 		A11F3D5B26929E5200475A3B /* TuYaDemo */ = {
 			isa = PBXGroup;
 			children = (
+				A11F3D8E2692D9E800475A3B /* TuYaDemo.entitlements */,
 				A11F3D5C26929E5200475A3B /* AppDelegate.swift */,
 				A11F3D5E26929E5200475A3B /* SceneDelegate.swift */,
 				A11F3D6026929E5200475A3B /* ViewController.swift */,
@@ -440,6 +442,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = TuYaDemo/TuYaDemo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YQ2BBNYL5U;
 				INFOPLIST_FILE = TuYaDemo/Info.plist;
@@ -449,8 +452,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ganhai.TuYaDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,6";
 			};
 			name = Debug;
 		};
@@ -459,6 +463,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = TuYaDemo/TuYaDemo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YQ2BBNYL5U;
 				INFOPLIST_FILE = TuYaDemo/Info.plist;
@@ -468,8 +473,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ganhai.TuYaDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,6";
 			};
 			name = Release;
 		};
