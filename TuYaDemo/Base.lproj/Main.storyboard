@@ -17,23 +17,61 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tJi-bg-W4G" customClass="SHGraffitiView" customModule="TuYaDemo" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GPu-o6-A8N">
+                                <rect key="frame" x="0.0" y="818" width="370" height="44"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="C17-2f-zch">
+                                        <rect key="frame" x="0.0" y="0.0" width="30" height="44"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BBn-uD-8P5">
+                                                <rect key="frame" x="0.0" y="0.0" width="30" height="44"/>
+                                                <state key="normal" title="无"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="C17-2f-zch" secondAttribute="bottom" id="U3J-iM-hu4"/>
+                                    <constraint firstItem="C17-2f-zch" firstAttribute="centerY" secondItem="GPu-o6-A8N" secondAttribute="centerY" id="j0g-Gr-3Jm"/>
+                                    <constraint firstAttribute="trailing" secondItem="C17-2f-zch" secondAttribute="trailing" id="ruq-f1-K4w"/>
+                                    <constraint firstItem="C17-2f-zch" firstAttribute="leading" secondItem="GPu-o6-A8N" secondAttribute="leading" id="x2U-ms-djY"/>
+                                    <constraint firstItem="C17-2f-zch" firstAttribute="top" secondItem="GPu-o6-A8N" secondAttribute="top" id="ziH-dc-8sf"/>
+                                </constraints>
+                            </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mpn-tV-fdf">
+                                <rect key="frame" x="383" y="825" width="31" height="30"/>
+                                <state key="normal" title="撤销"/>
+                                <connections>
+                                    <action selector="cheXiaoCick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LmM-Cs-1Eq"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="GPu-o6-A8N" firstAttribute="top" secondItem="tJi-bg-W4G" secondAttribute="bottom" id="0jn-FB-iH0"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="GPu-o6-A8N" secondAttribute="bottom" id="2QU-lT-rcb"/>
+                            <constraint firstItem="GPu-o6-A8N" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="2wt-Lj-HaH"/>
                             <constraint firstItem="tJi-bg-W4G" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="6AJ-Af-jVw"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tJi-bg-W4G" secondAttribute="trailing" id="Kdc-cR-6TK"/>
                             <constraint firstItem="tJi-bg-W4G" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="TcC-XG-fSN"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="tJi-bg-W4G" secondAttribute="bottom" id="aNe-PG-6fr"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="tJi-bg-W4G" secondAttribute="bottom" constant="44" id="aNe-PG-6fr"/>
+                            <constraint firstItem="Mpn-tV-fdf" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="nvN-E0-bFU"/>
+                            <constraint firstItem="Mpn-tV-fdf" firstAttribute="centerY" secondItem="GPu-o6-A8N" secondAttribute="centerY" id="uws-Cy-Mr3"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="GPu-o6-A8N" secondAttribute="trailing" constant="44" id="zrz-MB-XUM"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="drawView" destination="tJi-bg-W4G" id="SoK-Ii-rak"/>
+                        <outlet property="stackView" destination="C17-2f-zch" id="VDE-TT-DqB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-43" y="89"/>
+            <point key="canvasLocation" x="-43.478260869565219" y="88.392857142857139"/>
         </scene>
     </scenes>
     <resources>

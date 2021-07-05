@@ -10,6 +10,7 @@ import UIKit
 class DrawModel {
     var bpath:UIBezierPath = UIBezierPath.init()
     var path:CGMutablePath = CGMutablePath()
+    var color:UIColor = .red
     var list:[CGPoint] = []
 }
 class SHGraffitiView: UIView {
@@ -18,7 +19,7 @@ class SHGraffitiView: UIView {
         case normal
     }
     var type:UIType = .bsier
-    
+    var currentColor:UIColor = .red
     var oldList:[DrawModel] = []
     var currentModel:DrawModel?
     var context:CGContext? = UIGraphicsGetCurrentContext ()
@@ -49,13 +50,14 @@ class SHGraffitiView: UIView {
             }
         case .bsier:
             for item in self.oldList {
-                UIColor.red.setStroke()
-                UIColor.yellow.setFill()
+                item.color.setStroke()
+//                UIColor.red.setStroke()
                 let path = item.bpath
                 path.stroke()
             }
             if let path = self.currentModel?.bpath {
-                UIColor.red.setStroke()
+                self.currentModel?.color.setStroke()
+//                UIColor.red.setStroke()
                 path.lineWidth = 5
                 path.lineCapStyle = .round
                 path.lineJoinStyle = .round
@@ -84,13 +86,26 @@ class SHGraffitiView: UIView {
             self.currentModel?.list.append(point)
         case .bsier:
             self.currentModel = DrawModel.init()
+            self.currentModel?.color = self.currentColor
             self.currentModel?.bpath.move(to: point)
             self.currentModel?.list.append(point)
         }
         
         
     }
-    
+    func revoke() {
+        if self.currentModel == nil {
+            if self.oldList.isEmpty {
+                return
+            }
+            self.oldList.removeLast()
+        }else{
+            self.currentModel = nil
+        }
+        
+        
+        self.setNeedsDisplay()
+    }
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard let point = touches.first?.location(in: self) else {
             return
